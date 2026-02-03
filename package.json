@@ -1,0 +1,33 @@
+{
+  "name": "lnbits-scrum-skill",
+  "version": "1.0.0",
+  "description": "OpenClaw skill for LNbits Scrum extension - Bitcoin-native task management for AI agents and teams",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "openclaw",
+    "lnbits",
+    "scrum",
+    "bitcoin",
+    "lightning",
+    "task-management",
+    "ai",
+    "agent",
+    "skills"
+  ],
+  "author": "OpenClaw Community",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/lnbits-scrum-skill.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/lnbits-scrum-skill/issues"
+  },
+  "homepage": "https://github.com/yourusername/lnbits-scrum-skill#readme"
+}
