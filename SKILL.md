@@ -31,19 +31,15 @@ Create a configuration file at `~/.openclaw/lnbits-scrum-config.json` with one o
 }
 ```
 
-### Option 3: Admin Key (Legacy)
-```json
-{
-  "lnbits_url": "https://demo.lnbits.com",
-  "admin_key": "your_admin_key_here"
-}
-```
+**Important:** The LNbits Scrum extension ONLY supports Bearer token (access_token) and User ID (usr) authentication. X-Api-Key (wallet API key) is NOT supported.
 
 ## Authentication Methods
 
-The LNbits Scrum API supports both:
+The LNbits Scrum API supports:
 - **access_token**: `Authorization: Bearer <token>` header
 - **usr**: Query parameter `?usr=<uuid4>`
+
+X-Api-Key (admin_key/inkey) is NOT supported by this extension.
 
 The skill automatically selects the best available method from your config.
 

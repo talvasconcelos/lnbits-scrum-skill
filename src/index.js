@@ -41,11 +41,13 @@ class LnbitsScrumSkill {
    * Initialize the client with config
    */
   initialize() {
-    // Need at least one of: access_token, admin_key, or user_id
-    if (!this.config.access_token && !this.config.admin_key && !this.config.user_id && !this.config.usr) {
+    // Need at least one of: access_token or user_id/usr
+    // Note: X-Api-Key (admin_key/inkey) is NOT supported by LNbits Scrum extension
+    if (!this.config.access_token && !this.config.user_id && !this.config.usr) {
       throw new Error(
         'LNbits Scrum skill requires authentication. ' +
-        'Provide access_token (Bearer) OR admin_key (X-Api-Key) OR user_id/usr (query param). ' +
+        'Provide access_token (Bearer token) OR user_id/usr (query param). ' +
+        'X-Api-Key is NOT supported by the LNbits Scrum extension. ' +
         'See README.md for configuration details.'
       );
     }

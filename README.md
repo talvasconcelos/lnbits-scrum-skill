@@ -36,13 +36,12 @@ This skill enables a new paradigm: **autonomous AI agents coordinating work and 
 - One of the following authentication methods:
   - **Access token** (Bearer token via `Authorization: Bearer <token>` header) - Recommended
   - **User ID** (`usr` query parameter) - For public boards
-  - **Admin key** (`X-Api-Key` header) - Legacy support
 
 ## Installation
 
 1. Clone this skill to your OpenClaw skills directory:
    ```bash
-   git clone https://github.com/yourusername/lnbits-scrum-skill.git ~/.openclaw/skills/lnbits-scrum
+   git clone https://github.com/talvasconcelos/lnbits-scrum-skill.git ~/.openclaw/skills/lnbits-scrum
    ```
 
 2. Install dependencies:
@@ -69,18 +68,10 @@ This skill enables a new paradigm: **autonomous AI agents coordinating work and 
      "user_id": "your_user_uuid_here"
    }
    ```
-   
-   **Option 3: Admin Key Authentication (Legacy)**
-   ```json
-   {
-     "lnbits_url": "https://your-lnbits-instance.com",
-     "admin_key": "your_admin_key_here"
-   }
-   ```
 
 ## Authentication
 
-The LNbits Scrum API supports multiple authentication methods:
+The LNbits Scrum extension ONLY supports these authentication methods:
 
 ### Bearer Token (Recommended)
 ```json
@@ -97,6 +88,8 @@ Sent as: `Authorization: Bearer <token>`
 }
 ```
 Sent as: `?usr=550e8400-e29b-41d4-a716-446655440000`
+
+**Note:** X-Api-Key (wallet API key) is NOT supported by the LNbits Scrum extension. Only Bearer token and User ID authentication work.
 
 The skill automatically picks the best available authentication method based on your configuration.
 
@@ -254,11 +247,11 @@ This flexibility allows you to:
 
 ## Security
 
-- Store your access tokens and keys securely
+- Store your access tokens securely
 - Do not commit configuration files with sensitive information
 - Use `.gitignore` to exclude config files
 - Use appropriate wallet permissions for task rewards
-- Bearer tokens are preferred over admin keys for better security
+- Bearer tokens are preferred for better security
 
 ## Configuration Reference
 
@@ -266,13 +259,12 @@ This flexibility allows you to:
 {
   "lnbits_url": "https://your-lnbits-instance.com",
   "access_token": "Bearer token for authentication",
-  "admin_key": "Admin API key (legacy)",
   "user_id": "User UUID for usr parameter",
   "wallet_id": "Wallet ID for reward payments"
 }
 ```
 
-**Note**: Only one authentication method is needed. The skill will use `access_token` first, then fall back to `admin_key`, then `user_id`/`usr`.
+**Note**: Only one authentication method is needed. The skill will use `access_token` first, then fall back to `user_id`/`usr`.
 
 ## Contributing
 

@@ -24,10 +24,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yourusername/lnbits-scrum-skill.git"
+    "url": "git+https://github.com/talvasconcelos/lnbits-scrum-skill.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/lnbits-scrum-skill/issues"
+    "url": "https://github.com/talvasconcelos/lnbits-scrum-skill/issues"
   },
-  "homepage": "https://github.com/yourusername/lnbits-scrum-skill#readme"
+  "homepage": "https://github.com/talvasconcelos/lnbits-scrum-skill#readme"
 }
