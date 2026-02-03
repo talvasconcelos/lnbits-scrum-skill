@@ -17,9 +17,11 @@ class LnbitsScrumClient {
     this.config = config;
     this.baseURL = config.lnbits_url || 'https://demo.lnbits.com';
     
-    // Support both access token (Bearer) and admin key (X-Api-Key)
+    // LNbits Scrum extension only supports:
+    // 1. Bearer token (access_token via Authorization header)
+    // 2. User ID (usr query parameter)
+    // NOTE: X-Api-Key is NOT supported by this extension
     this.accessToken = config.access_token;
-    this.adminKey = config.admin_key;
     
     // User ID for usr query param authentication
     this.userId = config.user_id || config.usr;
@@ -32,11 +34,9 @@ class LnbitsScrumClient {
       'Content-Type': 'application/json'
     };
 
-    // Prefer Bearer token (access_token) over X-Api-Key
+    // Bearer token auth (preferred method)
     if (this.accessToken) {
       headers['Authorization'] = `Bearer ${this.accessToken}`;
-    } else if (this.adminKey) {
-      headers['X-Api-Key'] = this.adminKey;
     }
 
     this.api = axios.create({
